@@ -1,0 +1,50 @@
+span{
+    color: red;
+}
+
+h3,h4{
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.itemCard{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+    background-color: aliceblue;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin: 0.25rem 0.5rem;
+}
+
+.itemCard:hover{
+    transition-duration: 0.3s;
+    border: 1px solid rgba(43, 33, 33, 0.2);
+    box-shadow: 4px 4px  rgba(188, 143, 143, 0.2);
+}
+
+.itemCard .image{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 10px;
+    background-color: aqua;
+}
+
+.itemCard h3{
+    margin: 0;
+    padding: 0;
+}
+
+.price{
+    display: flex;
+    align-items: center;
+}
