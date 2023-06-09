@@ -2,7 +2,7 @@ const shopContainer = document.getElementById("shopContainer")
 const cartNum = document.getElementById("cartNum")
 cartNum.textContent = cart.length;
 
-const DisplayShopItemOnTheScreen=()=>{
+const DisplayShopItemOnTheScreen = () => {
     ShopItems.forEach(item => {
         item.id;
         item.itemName;
@@ -12,32 +12,23 @@ const DisplayShopItemOnTheScreen=()=>{
     });
 }
 
-const DrawItemCard = (item) =>{
-    let itemCard = document.createElement("a");
-    let itemImage = document.createElement("div");
-    let itemName = document.createElement("h3");
-    let priceTag = document.createElement("div")
-    let pT = document.createElement("p")
-    let pS = document.createElement("span")
+const DrawItemCard = (item) => {
+    let itemCard = document.createElement("div");
 
-    itemName.textContent = item.itemName;
+    itemCard.innerHTML = `<div href="details/details.html" class="itemCard">
+        <img src=${item.image} class="image">
+        </img>
+        <h3>${item.title}</h3>
+        <div class="price">
+            <p>Price  </p><span>$${item.price}.00</span>
+        </div>
+        <div class="btns">
+            <a class="add" onClick = "AddToCart">Add To Cart</a>
+            <a href="details/details.html" class="view">View</a>
+        </div>
+    `
 
-    itemCard.href = "details/details.html"
-
-    priceTag.classList.add("price")
-    pT.textContent = "Price $ "
-    pS.textContent = `${item.itemPrice}.00`
-    priceTag.appendChild(pT)
-    priceTag.appendChild(pS)
-
-    itemCard.classList.add("itemCard")
-    itemImage.classList.add("image")
-    itemCard.appendChild(itemImage)
-    itemCard.appendChild(itemName)
-    itemCard.appendChild(priceTag)
-    console.log(item.id)
-
-    itemCard.addEventListener("click",async()=>{
+    itemCard.addEventListener("click", async () => {
         localStorage.setItem("itemId", item.id)
     })
 
@@ -46,3 +37,6 @@ const DrawItemCard = (item) =>{
 
 
 DisplayShopItemOnTheScreen();
+
+
+// CLICK FUNCTIONS
